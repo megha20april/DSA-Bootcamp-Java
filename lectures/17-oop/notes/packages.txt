@@ -1,7 +1,9 @@
-Packages are containers for classes. They are used to keep the class name space compartmentalized.
+Packages are containers for classes. They are used to keep the class name space compartmentalized. 
+They are basically folders, in which every class has a different name.
 For example, a package allows you to create a class named List, which you can store in your own package without
-concern that it will collide with some other class named List stored elsewhere. Packages are stored in a hierarchical
-manner and are explicitly imported into new class definitions.
+concern that it will collide with some other class named List stored elsewhere. 
+
+Packages are stored in a hierarchical manner and are explicitly imported into new class definitions, and in intellij the package name gets appended with each other through a dot(.).
 
 The package is both a naming and a visibility control mechanism.
 
