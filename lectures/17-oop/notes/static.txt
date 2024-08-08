@@ -4,7 +4,11 @@ When a member is declared static, it can be accessed before any objects of its c
 and without reference to any object. You can declare both methods and variables to be static.
 The most common example of a static member is main( ).
 main( ) is declared as static because it must be called before any objects exist.
+because you can't create an object of main class because you'll have to write a program for that and the very first thing again that runs is the main function, so you have to be able to call on it before doing anything.
 Static method in Java is a method which belongs to the class and not to the object.
+
+A static method or variable is something that's independent of an instance, meaning they're common for all the instances.
+any change made to any static member, it's made for all instances.
 
 A static method can access only static data. It cannot access non-static data (instance variables)
 A non-static member belongs to an instance. It's meaningless without somehow resolving which instance of a class you
@@ -29,10 +33,10 @@ public class Human {
 
 A static method can call only other static methods and cannot call a non-static method from it.
 A static method can be accessed directly by the class name and doesn’t need any object
-A static method cannot refer to "this" or "super" keywords in anyway
+A static method cannot refer to "this" or "super" keywords in anyway because they depend on an instance.
 
 If you need to do computation in order to initialize your static variables,
-you can declare a static block that gets executed exactly once, when the class is first loaded.
+you can declare a static block that gets executed EXACTLY ONCE, when the class is FIRST loaded.
 
 // Demonstrate static variables, methods, and blocks.
      class UseStatic {
@@ -63,8 +67,12 @@ a = 3
 b = 12
 Note: main method is static, since it must be accessible for an application to run, before any instantiation takes place.
 
-NOTE: Only nested classes can be static.
+IMPORTANT NOTE: Only nested classes can be static.
+
 NOTE: Static inner classes can have static variables
+
+NOTE: since objects are created at runtime and a static stuff doesn't depend on an object 
+      hence static stuff is resolved at compile-time.
 
 You cant override the inherited static methods, as in java overriding takes place by resolving the type of object at
 run-time and not compile time, and then calling the respective method.
