@@ -56,3 +56,15 @@ For example, square(100) passes 100 as an argument. Inside square( ), the parame
 NOTE:
 Bus bus = new Bus();
 lhs(reference i.e. bus) is looked by compiler & rhs (object i.e. new Bus()) is looked by jvm
+
+
+Singleton Class
+this class can only have one single instance
+so the logic behind this is:
+to create an instance we use constructor right?
+so what if we just restrict the use of constructor, and we can do that by using the private keyword
+and then internally in that class we can make an instance of that class because we can't do that outside as we can't access it's constructor
+and then we can just return that instance by making a static method for it
+so that we can access that instance from outside
+
+for it's implementation check the code files
