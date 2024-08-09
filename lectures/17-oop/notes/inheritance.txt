@@ -14,11 +14,15 @@ It is important to understand that it is the type of the reference variable—no
 to—that determines what members can be accessed.
 When a reference to a subclass object is assigned to a superclass reference variable, you will have access only to
 those parts of the object defined by the superclass.
+although all the additional variables and methods of the subclass object have been initialised, but the superclass ref var won't be able to access them.
 
 plainbox      =  weightbox;
 (superclass)     (subclass)
 
 SUPERCLASS ref = new SUBCLASS();    // HERE ref can only access methods which are available in SUPERCLASS
+
+Now if i do the opposite i.e. a reference to a superclass object is assigned to a subclass reference variable.
+here it will give error, because since the type of the reference variable is of sub class, it should be able to access the additional stuff the subclass has right? but the obj it's refering to is of superclass, and in that obj those additional things don't even exist. this can create problems. hence, it's not valid.
 
 Using super:
 Whenever a subclass needs to refer to its immediate superclass, it can do so by use of the keyword super.
