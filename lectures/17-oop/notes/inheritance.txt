@@ -3,8 +3,8 @@ To inherit a class, you simply incorporate the definition of one class into anot
 class subclass-name extends superclass-name { // body of class
 }
 You can only specify one superclass for any subclass that you create. Java does not support the inheritance of
-multiple superclasses into a single subclass. You can, as stated, create a hierarchy of inheritance in which a subclass
-becomes a superclass of another subclass. However, no class can be a superclass of itself.
+multiple superclasses into a single subclass (Multiple Inheritance is not allowed in JAVA). You can, as stated, create a hierarchy of inheritance in which a subclass
+becomes a superclass of another subclass(Multilevel inheritance). However, no class can be a superclass of itself.
 
 Although a subclass includes all of the members of its superclass, it cannot access those members of the superclass
 that have been declared as private.
@@ -69,6 +69,9 @@ class BoxWeight extends Box {
 Notice that super() is passed an object of type BoxWeight—not of type Box.This still invokes the constructor Box(Box ob).
 NOTE: A superclass variable can be used to reference any object derived from that class.
 Thus, we are able to pass a BoxWeight object to the Box constructor.Of course,Box only has knowledge of its own members.
+internally how this works, can be understood like this:
+Box ob will refer to boxweight ob
+and in it's constructor obv it'll only be able to access properties of Box type.
 
 A Second Use for super
 The second form of super acts somewhat like this, except that it always refers to the superclass of the subclass in
@@ -77,7 +80,7 @@ which it is used.
 super.member
 
 Here, member can be either a method or an instance variable. This second form of super is most applicable to situations
-in which member names of a subclass hide members by the same name in the superclass.
+in which member names of a subclass hide/override members by the same name in the superclass.
 
 super( ) always refers to the constructor in the closest superclass. The super( ) in BoxPrice calls the constructor in
 BoxWeight. The super( ) in BoxWeight calls the constructor in Box. In a class hierarchy, if a superclass constructor
@@ -87,6 +90,7 @@ subclass needs parameters of its own.
 If you think about it, it makes sense that constructors complete their execution in order of derivation.
 Because a superclass has no knowledge of any subclass, any initialization it needs to perform is separate from and
 possibly prerequisite to any initialization performed by the subclass. Therefore, it must complete its execution first.
+this basically means any initialization of the superclass vars must be done before subclass initialisation.
 
 NOTE: If super( ) is not used in subclass' constructor, then the default or parameterless constructor of each superclass
 will be executed.
