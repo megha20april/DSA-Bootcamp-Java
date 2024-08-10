@@ -5,6 +5,9 @@ method defined by the superclass will be hidden.
 
 Method overriding occurs only when the names and the type signatures of the two methods are identical.
 If they are not, then the two methods are simply overloaded.
+Basically what we're trying to say here is,
+if you have two methods with same name in the base class and the child classbut they have different parameters types or order or number
+then there is no overriding, it's just overloading.
 
 (Check display functions in box classes)
 
@@ -19,4 +22,9 @@ made at run time.
 In other words, it is the type of the object being referred to (not the type of the reference variable)
 that determines which version of an overridden method will be executed.
 
-If B extends A then you can override a method in A through B with changing the return type of method to B.
+you can imagine this by stack and heap memory
+like if you have a superclass reference var, then in the stack, there is only declarations of what you can access
+now when this ref var points to a subclass object in heap memory, there it is defined that what you will get when you access it.
+
+If B extends A then you can also override a method in A through B with changing the return type of method to B.
+because as stated in overloading, this will be just redefining the same method.
