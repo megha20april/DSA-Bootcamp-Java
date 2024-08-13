@@ -11,8 +11,8 @@ When no access modifier is used, then by default the member of a class is public
 but cannot be accessed outside of its package.
 
             │ Class │ Package │ Subclass │ Subclass │ World
-            │       │         │(same pkg)│(diff pkg)│(diff pkg & not subclass)
-────────────┼───────┼─────────┼──────────┼──────────┼──────────────────────────
+            │       │         │(same pkg)│(diff pkg)│(diff pkg & not subclass)            + : accessible
+────────────┼───────┼─────────┼──────────┼──────────┼──────────────────────────           blank : not accessible        
 public      │   +   │    +    │    +     │     +    │   +
 ────────────┼───────┼─────────┼──────────┼──────────┼──────────────────────────
 protected   │   +   │    +    │    +     │     +    │
@@ -21,8 +21,13 @@ no modifier │   +   │    +    │    +     │          │
 ────────────┼───────┼─────────┼──────────┼──────────┼──────────────────────────
 private     │   +   │         │          │          │
 
-+ : accessible
-blank : not accessible
+
+
+public - you can use it anywhere, for outside packages, just import the package of oour class and that's it, you can use it.
+protected - it can be used anywhere within the same package, BUT for outside packages, it can be only used through an inherited subclass.
+no modifier - you can't use this outside the package.
+private - only accessible in that class.
+
 
 package packageOne;
 public class Base
@@ -58,8 +63,19 @@ of its subclasses
 
 new Base().display();
 -> not allowed because the caller's (the this instance) class is not defined in the same package like the Base class,
-so this can't access the protected method. And it doesn't matter - as we see - that the current subclasses a class from
-that package. That backdoor is closed ;)
+so this can't access the protected method. 
+
+this is because if it were allowed, then there would be no difference in protected and public. HOW?
+            when we inherit a class outside the same package, we can make instances of the super-class right?
+            AND when we don't inherit a class but import our class package into the outside package,
+                        then also we can make instances of the super-class right?
+
+            BUTTT since the instance created, is an instance of super-class, it doesn't know if it's being used through inheritance
+            or through simple import
+            hence to differentiate between these two situations 
+            the protected fields of the sub-class can be accessed ONLY through a sub-class instance.
+            this is to make sure ki YES it is being used through inheritance and not just be importing the package
+
 
 Remember that any time talks about a subclass having an access to a superclass member, we could be talking about the
 subclass inheriting the member, not simple accessing the member through a reference to an instance of the superclass.
