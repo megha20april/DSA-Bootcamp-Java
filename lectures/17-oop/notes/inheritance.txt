@@ -124,5 +124,34 @@ cannot be inherited because these method will run from the parent interface and 
 override them, they will always run the method in parent interface.
 That is why static interface method must have a body.
 
+
+class A {
+    public static void display() {
+        System.out.println("Inside static method of superclass");
+    }
+}
+class B extends A {
+    public void show() {
+        display();
+    }
+
+    public static void display() {
+        System.out.println("Inside static method of this class");
+    }
+}
+public class Test {
+    public static void main(String[] args) {
+        B b = new B();
+        // prints: Inside static method of this class
+        b.display();
+
+        A a = new B();
+        // prints: Inside static method of superclass
+        a.display();
+    }
+}
+//static methods don't depend on the object that's being referred to 
+// they depend only on the class
+
 NOTE : Polymorphism does not apply to instance variables.
 
