@@ -1,0 +1,9 @@
+Basically what encapsulation is,
+is data hiding
+like i want to protect my data from outside world or like i don't want any outside interference to my code
+then i'll do encapsulation through access modifiers
+and only provide access to them through getters and setters
+
+this is basically like for example,
+in a linked list class i don't want anybody outside this class
+to be able to access the head, hence i'll just hide it (private)
