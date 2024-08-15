@@ -1,3 +1,19 @@
+Instance Variables and Methods:
+  Instance Variables (Fields):
+
+  Polymorphism doesn't apply to variables(bc they can't be overriden)
+
+  Instance variables are resolved at compile-time based on the reference type.
+  Even though the reference points to an object of a subclass, the instance variable accessed is determined by the reference type, not      the object type.
+  variable can not be overridden they can only be hided
+      what this means is when a subclass has a variable with same name, it'll hide the variable of the superclass when the reference
+      variable's type is of subclass. But if the reference variable is of superclass type then the variable is used from superclass
+
+  Methods:
+
+  Methods, if overridden, are resolved at runtime based on the object type. This is what we refer to as polymorphism in Java. The JVM
+  determines which method to execute based on the actual object, not the reference type.
+
 @Override -- only used to check if it's overriding (if it's not an error will be given) 
              and also to denote that this is overriding to inc readability
 
