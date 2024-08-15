@@ -43,6 +43,11 @@ new Box( ) is calling the Box( ) constructor.
 
 Inheritance and constructors in Java:
 
+Constructors are not members of a class, so subclasses do not inherit them. However, a subclass can call the superclass's constructor from the first line of its own constructor by using a super keyword.
+if constructors could be inherited, then that would mean it could also be overriden(redefined) in the subclasses
+but if i could redefine a parent class' constructor in a child class, then that would mean i can use that constructor to make an instance of child class, which is absurd.
+Basically constructors are not normal methods, they are made to only create instances, hence they can't be inherited and thus can't be overriden.
+
 In Java, constructor of base class with no argument gets automatically called in derived class constructor.
 For example, output of following program given below is:
 
