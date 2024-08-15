@@ -77,6 +77,8 @@ NOTE: since objects are created at runtime and a static stuff doesn't depend on 
 You cant override the inherited static methods, as in java overriding takes place by resolving the type of object at
 run-time and not compile time, and then calling the respective method.
 Static methods are class level methods, so it is always resolved during compile time.
+Only the methods that are overriden are resolved at run-time because they depend on the object type
+but static methods do not depend on object type, they are same for each instance, hence they are resolved at compile time
 Static INTERFACE METHODS are not inherited by either an implementing class or a sub-interface.
 
 NOTE:
